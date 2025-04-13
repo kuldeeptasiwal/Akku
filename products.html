@@ -3,23 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akku Products</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Products - Akku Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .product {
+      background: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .product h2 {
+      margin-top: 0;
+    }
+
+    .images {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .images img {
+      width: 150px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .buy-btn {
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-  <header><h1>Our Products</h1></header>
+  <div class="container">
+    
+    <div class="product">
+      <h2>Leriya Fashion Co Ord Set</h2>
+      <div class="images">
+        <img src="https://i.ibb.co/8LckY2ms/61-Lno-Pssk-AL-SY741.jpg">
+        <img src="https://i.ibb.co/KjHHDCyY/816-793-WCKL-SY741.jpg">
+        <img src="https://i.ibb.co/tMPcGkfj/81-Bu-Ru-Qsod-L-SY741.jpg">
+        <img src="https://i.ibb.co/KxnqwnfF/61b-HETt-FZ0-L-SY741.jpg">
+      </div>
+      <p><strong>Price:</strong> ₹799</p>
+      <p><strong>Description:</strong> Stylish A-Line Design, Lightweight & Breathable Rayon fabric. Versatile for ethnic and western wear. Machine washable. Adult size options available.</p>
+      <a class="buy-btn" href="https://wa.me/918000144274?text=I%20want%20to%20buy%20Leriya%20Fashion%20Co%20Ord%20Set%20for%20₹799">Buy on WhatsApp</a>
+    </div>
 
-  <main class="product-list">
-    <div class="product" onclick="location.href='product1.html'">
-      <img src="images/product1-1.jpg" />
-      <h2>Leriya Co-Ord Set</h2>
-      <p>₹799</p>
-    </div>
-    <div class="product" onclick="location.href='product2.html'">
-      <img src="images/product2-1.jpg" />
+    <div class="product">
       <h2>GYRO Men's Watch</h2>
-      <p>₹799</p>
+      <div class="images">
+        <img src="https://i.ibb.co/fYFLhkxL/411-Baer-RMd-L.jpg">
+        <img src="https://i.ibb.co/1JY2CVqc/51f-D7i-Jux-VL.jpg">
+        <img src="https://i.ibb.co/dsXJrKHM/41-Ufl-TKR5-BL.jpg">
+        <img src="https://i.ibb.co/QvBggkzr/41h-KLG-n-RJL.jpg">
+      </div>
+      <p><strong>Price:</strong> ₹799</p>
+      <p><strong>Description:</strong> Creative wheel design with butterfly double snap. Red Shudarshan strap. Perfect gift item for fans and fashion lovers.</p>
+      <a class="buy-btn" href="https://wa.me/918000144274?text=I%20want%20to%20buy%20GYRO%20Men's%20Watch%20for%20₹799">Buy on WhatsApp</a>
     </div>
-  </main>
+
+  </div>
 </body>
 </html>
