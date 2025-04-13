@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+.logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
+.banners {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+.explore-btn-container {
+  text-align: center;
+  margin: 20px;
+}
+.explore-btn {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00ffff; }
+  to { box-shadow: 0 0 30px #ff00ff; }
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.product {
+  background: white;
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.product img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 20px;
+}
+.gallery-scroll img {
+  height: 300px;
+  border-radius: 10px;
+}
+.product-desc {
+  padding: 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 10px;
+}
+.buy-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+}
