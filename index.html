@@ -9,37 +9,14 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
-      overflow-x: hidden;
     }
 
-    /* Banner Styling */
+    /* Regular Banner Styling */
     .banner {
       width: 100%;
       display: block;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards;
-    }
-
-    /* Fade-in animation for banners */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Full-Screen Banner Styling */
-    .full-banner {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      background-image: url('https://i.ibb.co/CpTpPkqX/animations-e-commerce-1024x525.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: fadeIn 2s forwards;
+      opacity: 1;
+      transition: opacity 1s;
     }
 
     /* Explore Button Styling */
@@ -61,26 +38,102 @@
       transition: transform 0.3s, background-color 0.3s;
     }
 
-    /* Hover animation for the Explore button */
+    /* Hover effect for Explore button */
     .explore-btn:hover {
       transform: scale(1.1);
       background-color: #FF8C00;
     }
+
+    /* Firecracker / Celebration Animation */
+    .celebration {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      pointer-events: none;
+      animation: confetti-animation 3s forwards;
+    }
+
+    @keyframes confetti-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Confetti particles */
+    .confetti {
+      width: 10px;
+      height: 10px;
+      background-color: #FF1493;
+      position: absolute;
+      animation: fall 3s ease-out infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(200px) rotate(720deg);
+      }
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- First Two Banners with fade-in effect -->
+  <!-- Regular Banners -->
   <img class="banner" src="https://i.ibb.co/qYtcptV1/akku.png" alt="Banner 1">
   <img class="banner" src="https://i.ibb.co/dJDWYmYD/akku-11-upscaled.png" alt="Banner 2">
 
-  <!-- Third Banner with fade-in effect -->
+  <!-- Third Banner -->
   <img class="banner" src="https://i.ibb.co/6RPkpBM5/new-arrival.png" alt="New Arrival">
 
-  <!-- Fourth Full-Screen Banner with Explore Button -->
-  <div class="full-banner">
-    <a class="explore-btn" href="products.html">Explore</a>
-  </div>
+  <!-- Fourth Banner (Replaced) -->
+  <img class="banner" src="https://i.ibb.co/CpTpPkqX/animations-e-commerce-1024x525.png" alt="New Banner">
+
+  <!-- Explore Button (mid-left) -->
+  <a class="explore-btn" href="products.html">Explore</a>
+
+  <!-- Buy Button with Celebration Trigger -->
+  <button class="explore-btn" onclick="triggerCelebration()">Buy</button>
+
+  <!-- Celebration Animation Section -->
+  <div id="celebration-container" class="celebration"></div>
+
+  <script>
+    // Function to trigger firecracker celebration on "Buy" button click
+    function triggerCelebration() {
+      // Create confetti elements
+      let container = document.getElementById("celebration-container");
+      
+      // Clear previous celebration effects if any
+      container.innerHTML = "";
+
+      // Create multiple confetti particles for effect
+      for (let i = 0; i < 30; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = `${Math.random() * 100}%`; // Random horizontal position
+        confetti.style.animationDelay = `${Math.random() * 2}s`; // Randomize delay for animation
+        container.appendChild(confetti);
+      }
+
+      // Display the celebration container for a while
+      container.style.display = "block";
+
+      // Hide the celebration after animation
+      setTimeout(() => {
+        container.style.display = "none";
+      }, 3000); // After 3 seconds
+    }
+  </script>
 
 </body>
 </html>
