@@ -19,12 +19,17 @@
       transition: opacity 1s;
     }
 
-    /* Explore Button Styling */
+    /* Container for the fourth banner with Explore button */
+    .banner-container {
+      position: relative;
+    }
+
+    /* Explore Button Styling (Centered) */
     .explore-btn {
       position: absolute;
       top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);  /* Centers the button */
       background: linear-gradient(45deg, red, blue, green, purple);
       color: white;
       padding: 15px 30px;
@@ -40,7 +45,7 @@
 
     /* Hover effect for Explore button */
     .explore-btn:hover {
-      transform: scale(1.1);
+      transform: translate(-50%, -50%) scale(1.1);
       background-color: #FF8C00;
     }
   </style>
@@ -54,11 +59,11 @@
   <!-- Third Banner -->
   <img class="banner" src="https://i.ibb.co/6RPkpBM5/new-arrival.png" alt="New Arrival">
 
-  <!-- Fourth Banner (Replaced) -->
-  <img class="banner" src="https://i.ibb.co/CpTpPkqX/animations-e-commerce-1024x525.png" alt="New Banner">
-
-  <!-- Explore Button (mid-left) -->
-  <a class="explore-btn" href="products.html">Explore</a>
+  <!-- Fourth Banner with Explore Button Centered -->
+  <div class="banner-container">
+    <img class="banner" src="https://i.ibb.co/CpTpPkqX/animations-e-commerce-1024x525.png" alt="New Banner">
+    <a class="explore-btn" href="products.html">Explore</a>
+  </div>
 
 </body>
 </html>
