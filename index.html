@@ -43,47 +43,6 @@
       transform: scale(1.1);
       background-color: #FF8C00;
     }
-
-    /* Firecracker / Celebration Animation */
-    .celebration {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      pointer-events: none;
-      animation: confetti-animation 3s forwards;
-    }
-
-    @keyframes confetti-animation {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Confetti particles */
-    .confetti {
-      width: 10px;
-      height: 10px;
-      background-color: #FF1493;
-      position: absolute;
-      animation: fall 3s ease-out infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(200px) rotate(720deg);
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -100,40 +59,6 @@
 
   <!-- Explore Button (mid-left) -->
   <a class="explore-btn" href="products.html">Explore</a>
-
-  <!-- Buy Button with Celebration Trigger -->
-  <button class="explore-btn" onclick="triggerCelebration()">Buy</button>
-
-  <!-- Celebration Animation Section -->
-  <div id="celebration-container" class="celebration"></div>
-
-  <script>
-    // Function to trigger firecracker celebration on "Buy" button click
-    function triggerCelebration() {
-      // Create confetti elements
-      let container = document.getElementById("celebration-container");
-      
-      // Clear previous celebration effects if any
-      container.innerHTML = "";
-
-      // Create multiple confetti particles for effect
-      for (let i = 0; i < 30; i++) {
-        let confetti = document.createElement("div");
-        confetti.classList.add("confetti");
-        confetti.style.left = `${Math.random() * 100}%`; // Random horizontal position
-        confetti.style.animationDelay = `${Math.random() * 2}s`; // Randomize delay for animation
-        container.appendChild(confetti);
-      }
-
-      // Display the celebration container for a while
-      container.style.display = "block";
-
-      // Hide the celebration after animation
-      setTimeout(() => {
-        container.style.display = "none";
-      }, 3000); // After 3 seconds
-    }
-  </script>
 
 </body>
 </html>
