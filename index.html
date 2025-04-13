@@ -9,13 +9,28 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
+      overflow-x: hidden;
     }
 
+    /* Banner Styling */
     .banner {
       width: 100%;
       display: block;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
     }
 
+    /* Fade-in animation for banners */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Full-Screen Banner Styling */
     .full-banner {
       position: relative;
       width: 100%;
@@ -23,8 +38,11 @@
       background-image: url('https://i.ibb.co/CpTpPkqX/animations-e-commerce-1024x525.png');
       background-size: cover;
       background-position: center;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
     }
 
+    /* Explore Button Styling */
     .explore-btn {
       position: absolute;
       top: 50%;
@@ -40,16 +58,26 @@
       cursor: pointer;
       z-index: 2;
       text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    /* Hover animation for the Explore button */
+    .explore-btn:hover {
+      transform: scale(1.1);
+      background-color: #FF8C00;
     }
   </style>
 </head>
 <body>
 
-  <!-- First Two Banners -->
+  <!-- First Two Banners with fade-in effect -->
   <img class="banner" src="https://i.ibb.co/qYtcptV1/akku.png" alt="Banner 1">
   <img class="banner" src="https://i.ibb.co/dJDWYmYD/akku-11-upscaled.png" alt="Banner 2">
 
-  <!-- Third Full-Screen Banner with Explore Button -->
+  <!-- Third Banner with fade-in effect -->
+  <img class="banner" src="https://i.ibb.co/6RPkpBM5/new-arrival.png" alt="New Arrival">
+
+  <!-- Fourth Full-Screen Banner with Explore Button -->
   <div class="full-banner">
     <a class="explore-btn" href="products.html">Explore</a>
   </div>
